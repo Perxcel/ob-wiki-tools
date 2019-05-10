@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'error')}">
+<html th:replace="~{fragments/layout :: layout (~{::body},'error')}" xmlns:th="http://www.thymeleaf.org">
 
-  <body>
-    <p th:text="${message}">Exception message</p>
-  </body>
+    <body>
+        <p th:text="${message}">Exception message</p>
+        <a href="/">No worries, click here to start again</a>
+    </body>
 
 </html>
