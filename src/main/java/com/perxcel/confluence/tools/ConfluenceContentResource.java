@@ -77,6 +77,7 @@ public class ConfluenceContentResource {
     }
 
     private String getMarkdown(String pageId, String accessToken) {
+
         PageResult content = confluenceReadApi.getContent(accessToken, pageId);
 
         String html = content.getBody().getView().getValue();
@@ -90,6 +91,7 @@ public class ConfluenceContentResource {
         markdown = htmlToMarkDownGenerator.convertStrongToMDBold(markdown);
 
         markdown = htmlToMarkDownGenerator.removeSpanTag(markdown);
+        markdown = htmlToMarkDownGenerator.removeFormTag(markdown);
 
         markdown = htmlToMarkDownGenerator.convertHtmlListToMarkdown(markdown);
 

@@ -217,7 +217,7 @@ public class HtmlToMarkDownGenerator {
         for (int t = 0; t < codes.size(); t++) {
             Element code = codes.get(t);
 
-            StringBuilder markDownBuilder = new StringBuilder("```json\n").append(code.text()).append("\n```");
+            StringBuilder markDownBuilder = new StringBuilder("\n```json\n").append(code.text()).append("\n```");
 
             // replace elem
             TextNode textNode = new TextNode(markDownBuilder.toString());
@@ -275,11 +275,12 @@ public class HtmlToMarkDownGenerator {
 
         Elements lists = document.select("ol li");
 
+        final String listStarter = "\n* ";
         for (int t = 0; t < lists.size(); t++) {
             Element listItem = lists.get(t);
 
             // replace elem
-            String text = "\n" + (t + 1) + " " + listItem.text();
+            String text = listStarter + listItem.text();
             TextNode textNode = new TextNode(text);
             listItem.replaceWith(textNode);
         }
@@ -287,12 +288,25 @@ public class HtmlToMarkDownGenerator {
         Elements lists1 = document.select("ul li");
         for (Element list : lists1) {
             // replace elem
-            String text = "\n" + "* " + list.text();
+            String text = listStarter + list.text();
             TextNode textNode = new TextNode(text);
             list.replaceWith(textNode);
         }
 
         System.out.println("......................list items replaced");
+        document.outputSettings().prettyPrint(false);
+        return document.toString();
+    }
+
+    public String removeFormTag(String html) {
+        Document document = Jsoup.parse(html);
+        document.outputSettings().prettyPrint(false);
+
+        Elements forms = document.select("form");
+
+        forms.remove();
+
+        System.out.println("......................span nuked");
         document.outputSettings().prettyPrint(false);
         return document.toString();
     }
