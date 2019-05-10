@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout (~{::body},'markdown')}" xmlns:th="http://www.thymeleaf.org">
+
+    <body>
+
+        <div class="container">
+            <h1>Markdown</h1>
+            <br>
+<!--          <button onclick="copyToClipboard('#markdown_id')">Copy to clipboard</button>-->
+
+            <a href="/">Click here to go back</a>
+            <br>
+            <pre id="markdown_id" th:text="${markdown}"></pre>
+            <br>
+        </div>
+    </body>
+
+</html>

@@ -6,5 +6,5 @@ target/
 .project
 .settings/
 docs/tmp/
-docs/java-getting-started/
+docs/ob-wiki-tools/
 docs/deploying-spring-boot-apps/

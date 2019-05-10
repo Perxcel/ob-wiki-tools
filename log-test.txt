@@ -1,0 +1,9 @@
+631  [main] INFO  c.p.c.t.ConfluenceHelperApplicationTests - Starting ConfluenceHelperApplicationTests on Nitins-MBP.local with PID 82913 (started by nitintiwari in /Users/nitintiwari/perxcel/ob-wiki-tools)
+634  [main] INFO  c.p.c.t.ConfluenceHelperApplicationTests - The following profiles are active: production
+2643 [main] INFO  c.p.c.t.ConfluenceHelperApplicationTests - Started ConfluenceHelperApplicationTests in 2.187 seconds (JVM running for 2.871)
+3855 [main] INFO  c.p.c.t.ConfluenceHelperApplicationTests - Markdown----------
+
+
+
+
+3855 [main] INFO  c.p.c.t.ConfluenceHelperApplicationTests - markdown
